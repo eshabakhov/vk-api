@@ -16,7 +16,7 @@ public class ConfigLoader {
         try (FileInputStream fis = new FileInputStream("src/main/resources/application.properties")) {
             properties.load(fis);
         } catch (IOException e) {
-            log.error("Ошибка загрузки application.properties: {}", e.getMessage());
+            log.error("Error downloading application.properties: {}", e.getMessage());
         }
     }
 

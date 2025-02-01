@@ -32,7 +32,7 @@ public class UserService {
     }
 
     public void update() throws InterruptedException {
-        log.info("Начинаю обновлять данные по user_info");
+        log.info("Start data update in user_info");
         long usersCount = userDAO.count();
         int pageSize = 500;
         int nThreads = 100;
@@ -55,7 +55,7 @@ public class UserService {
         latch.await();
         executor.shutdown();
         executor.awaitTermination(1, TimeUnit.MINUTES);
-        log.info("Данные по user_info обновлены успешно!");
+        log.info("Data by user_info updated successfully!");
     }
 
     private List<User> restResponseUsers(int page, int pageSize) {
