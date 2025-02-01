@@ -1,5 +1,6 @@
 package org.example.mapper;
 
+import org.example.config.ConfigLoader;
 import org.example.date.DateValidator;
 import org.example.date.DateValidatorUsingLocalDate;
 import org.example.dto.User;
@@ -18,11 +19,12 @@ public class JSONUserMapper implements Mapper<JSONObject, User> {
     private final String BIRTHDAY_DATE = "bdate";
     private final String CITY = "city";
     private final String CONTACTS = "contacts";
+    private final Integer DEFAULT_YEAR = Integer.parseInt(ConfigLoader.get("vk.defaultYear"));
 
     private final DateTimeFormatter formatterWithYear = DateTimeFormatter.ofPattern("dd.MM.yyyy");
     private final DateTimeFormatter formatterWithoutYear = new DateTimeFormatterBuilder()
                                                                     .appendPattern("dd.MM")
-                                                                    .parseDefaulting(ChronoField.YEAR, 3000)
+                                                                    .parseDefaulting(ChronoField.YEAR, DEFAULT_YEAR)
                                                                     .toFormatter();
     private final DateValidator validatorWithYear = new DateValidatorUsingLocalDate(formatterWithYear);
     private final DateValidator validatorWithoutYear = new DateValidatorUsingLocalDate(formatterWithoutYear);
