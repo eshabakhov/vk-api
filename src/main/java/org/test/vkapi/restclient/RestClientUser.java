@@ -25,8 +25,8 @@ public class RestClientUser {
     private static final String PARAM_FIELDS = "fields";
 
     public ResponseList getUsers(List<User> userList) throws URISyntaxException {
-        URI uri = new URIBuilder(String.format("%s%s", vkProperties.getUrlVkApi(), vkProperties.getMethodUsersGetVkApi()))
-                .addParameter(PARAM_API_VERSION, vkProperties.getVkApiVersion())
+        URI uri = new URIBuilder(String.format("%s%s", vkProperties.getUrlApi(), vkProperties.getApiMethodUsersGet()))
+                .addParameter(PARAM_API_VERSION, vkProperties.getApiVersion())
                 .addParameter(PARAM_ACCESS_TOKEN, vkProperties.getAccessToken())
                 .addParameter(PARAM_USERS_IDS, userList.stream().map(User::getUserId).toList()
                         .toString().replace("[", "").replace("]", ""))

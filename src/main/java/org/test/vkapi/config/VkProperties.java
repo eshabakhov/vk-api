@@ -10,9 +10,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConfigurationProperties(prefix = "vk")
 public class VkProperties {
-    private String urlVkApi;
-    private String methodUsersGetVkApi;
-    private String vkApiVersion;
+    private String urlApi;
+    private String apiMethodUsersGet;
+    private String apiVersion;
     private String accessToken;
     private String fields;
+    private String defaultYear;
 }

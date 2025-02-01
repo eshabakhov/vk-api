@@ -19,6 +19,7 @@ public class UserDTOUserMapper implements Mapper<UserDTO, User>{
                                                             .toFormatter();
     private final DateValidator validatorWithYear = new DateValidatorUsingLocalDate(formatterWithYear);
     private final DateValidator validatorWithoutYear = new DateValidatorUsingLocalDate(formatterWithoutYear);
+
     @Override
     public User map(UserDTO userDTO) {
         if (userDTO == null) return null;

@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
 public class DateValidatorUsingLocalDate implements DateValidator {
-    private DateTimeFormatter dateFormatter;
+    private final DateTimeFormatter dateFormatter;
 
     public DateValidatorUsingLocalDate(DateTimeFormatter dateFormatter) {
         this.dateFormatter = dateFormatter;
