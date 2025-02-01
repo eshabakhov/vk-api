@@ -1,0 +1,24 @@
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <!--User Info-->
+    <changeSet id="v1-1" author="Shabakhov Eset">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="user_info"/>
+            </not>
+        </preConditions>
+        <createTable tableName="user_info">
+            <column name="user_id" type="bigint">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_f_name" type="varchar"/>
+            <column name="user_l_name" type="varchar"/>
+            <column name="user_b_date" type="date"/>
+            <column name="user_city" type="varchar"/>
+            <column name="user_contacts" type="varchar"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
