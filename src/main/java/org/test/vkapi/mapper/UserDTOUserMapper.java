@@ -15,7 +15,7 @@ public class UserDTOUserMapper implements Mapper<UserDTO, User>{
     private final DateTimeFormatter formatterWithYear = DateTimeFormatter.ofPattern("d.M.yyyy");
     private final DateTimeFormatter formatterWithoutYear = new DateTimeFormatterBuilder()
                                                             .appendPattern("dd.MM")
-                                                            .parseDefaulting(ChronoField.YEAR, 0)
+                                                            .parseDefaulting(ChronoField.YEAR, 3000)
                                                             .toFormatter();
     private final DateValidator validatorWithYear = new DateValidatorUsingLocalDate(formatterWithYear);
     private final DateValidator validatorWithoutYear = new DateValidatorUsingLocalDate(formatterWithoutYear);
