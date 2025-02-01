@@ -81,7 +81,7 @@ public class UserDAO {
         }
 
         if (parameters.isEmpty()) {
-            log.info("Нет данных для обновления");
+            log.info("No data to update");
             return;
         }
 

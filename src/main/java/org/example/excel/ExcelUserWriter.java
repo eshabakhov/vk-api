@@ -33,7 +33,7 @@ public class ExcelUserWriter {
 
 
     public void writeUsersToExcel() throws InterruptedException {
-        log.info("Начинаю эскпорт данных в excel файл");
+        log.info("Start export in excel file");
         try (Workbook workbook = new XSSFWorkbook()) {
             Sheet sheet = workbook.createSheet(SHEET_NAME);
 
@@ -65,7 +65,7 @@ public class ExcelUserWriter {
                 workbook.write(fileOut);
             }
 
-            log.info("Данные по user_info успещно записаны в excel файл: {}", FULL_NAME);
+            log.info("Data from user_info uploaded successfully into excel file: {}", FULL_NAME);
         } catch (IOException e) {
             log.error(e.getMessage(), e);
         }
